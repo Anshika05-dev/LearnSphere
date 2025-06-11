@@ -27,7 +27,7 @@ const authcontroller = {
       
         } catch (error) {
           console.error(error);
-          res.status(500).json({ message: 'Server error' });
+          res.status(500).json(error);
         }
       },
       login:async (req, res) => {
@@ -51,6 +51,7 @@ const authcontroller = {
             {
               userId: user._id,
               role: user.role,
+              email: user.email
             },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
