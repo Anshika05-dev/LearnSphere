@@ -1,0 +1,36 @@
+.showcourse_btn{
+    color: rgb(157, 155, 155);
+    border: 1px solid rgb(217, 212, 212);
+    border-radius: 3rem;
+    padding: 1rem;
+    text-decoration: none;
+}
+.course_des{
+    color: rgb(199, 197, 197);
+    padding: 0 4rem ;
+}
+.courses{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:2rem;
+    padding: 2rem 12rem;
+}
+
+@media(max-width:768px){
+    .courses{
+        grid-template-columns: auto auto;
+    }
+}
+@media(max-width:425px){
+    .course_des{
+        padding: 0 1.7rem;
+    }
+    .courses{
+        grid-template-columns: auto;     
+    }
+}
+@media(max-width:1024px){
+    .courses{
+        padding: 2rem;
+    }
+}

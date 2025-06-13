@@ -1,0 +1,30 @@
+.company_logo{
+    width: 7rem;
+}
+.companies_section{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.companies_images{
+    display: flex;
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:768px){
+    .company_logo{
+        width:4rem;
+    }
+}
+@media(max-width:425px){
+    .companies_images{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+    }
+    .company_logo{
+        width: 7rem;
+    }
+}

@@ -1,12 +1,12 @@
 .logo{
-    padding-left: 1rem;
+    padding-left: 5rem;
     width: 4.5rem;
     height: 4rem;
     cursor:pointer;
     padding-bottom: 0.1rem;
 }
 .acc_button{
-    background-color: rgb(161, 71, 149);
+    background-color: #407206;
     color: white;
     padding:7px 15px;
     border-radius: 3rem;
@@ -14,6 +14,10 @@
 }
 .mobile_menu{
     display: none;
+    flex-direction: column; 
+    position: absolute;             
+  top: 5.2rem;                    
+  right: 1rem; 
 }
 .buttons{
     display: flex;
@@ -28,6 +32,7 @@
     position: relative;
 }
 .join_contri{
+    padding: 0;
     border: none;
     background:transparent;
     font-size: 1rem;
@@ -37,7 +42,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid gray;
-    background-color:rgb(211, 250, 250) ;
+    background-color:#eeeea1;
 }
 .edu_nav{
     display: flex;
@@ -49,9 +54,11 @@
 .profile{
     border-radius: 5.2rem;
     border: none;
-    background-color: rgb(161, 71, 149);
+    background-color:#eeeea1;
 }
-
+.mob_menu{
+    display: none;
+}
 
 
 @media(max-width:768px){
@@ -59,10 +66,16 @@
         display:none;
     }
     .mobile_menu{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         gap: 1rem;
-        padding-right: 2rem;
+        padding: 0.2rem 2rem;
+        background-color: #96ca5b;
+        border-radius: 1rem;
+    }
+    .logo{
+        padding-left: 1rem;
+    }
+    .mob_menu{
+        display: flex;
+        padding: 2rem;
     }
 }
