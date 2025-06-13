@@ -1,12 +1,15 @@
 import React from "react";
 import colored_logo from "../../assets/favicon.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { User } from 'lucide-react';
+import { useClerk,UserButton,useUser} from "@clerk/clerk-react";
 
 import '../../styles/Navbar.css'
 const Navbar = () => {
-//   const location = useLocation();
+
   const iscourselistpage = location.pathname.includes("/course-list");
+ const {openSignIn}= useClerk();
+ const{user}=useUser();
   return (
     <div className={iscourselistpage? "edu_nav":"nav"}>
       <img
@@ -15,18 +18,18 @@ const Navbar = () => {
         className="logo"
       />
       <div className="buttons">
-          <button className="join_contri">Become Educator</button>
-          <Link to="/my-enrollments" className="enroll">My Enrollments</Link>
-        <button className="acc_button">
+          {user&&<><button className="join_contri">Become Educator</button>
+          <Link to="/my-enrollments" className="enroll">My Enrollments</Link></>}
+        { user? <UserButton />:<button onClick={()=>openSignIn()} className="acc_button">
           Create Account
-        </button>
+        </button>}
       </div>
       <div className="mobile_menu">
 <div>
-<button className="join_contri">Become Educator</button>
-<Link to="/my-enrollments" className="enroll">My Enrollments</Link>
+{user&&<><button className="join_contri">Become Educator</button>
+<Link to="/my-enrollments" className="enroll">My Enrollments</Link></>}
 </div>
-<button className="profile"><User /></button>
+{ user? <UserButton />:<button onClick={()=>openSignIn()} className="profile"><User /></button>}
       </div>
     </div>
   );
