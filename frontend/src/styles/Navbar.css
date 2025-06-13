@@ -1,0 +1,68 @@
+.logo{
+    padding-left: 5rem;
+    width: 4.5rem;
+    height: 4rem;
+    cursor:pointer;
+    padding-bottom: 0.1rem;
+}
+.acc_button{
+    background-color: rgb(161, 71, 149);
+    color: white;
+    padding:7px 15px;
+    border-radius: 3rem;
+    border: none;
+}
+.mobile_menu{
+    display: none;
+}
+.buttons{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 5rem;
+}
+.enroll{
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+.join_contri{
+    border: none;
+    background:transparent;
+    font-size: 1rem;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    background-color:rgb(211, 250, 250) ;
+}
+.edu_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    background-color: white;
+}
+.profile{
+    border-radius: 5.2rem;
+    border: none;
+    background-color: rgb(161, 71, 149);
+}
+
+
+
+@media(max-width:768px){
+    .buttons{
+        display:none;
+    }
+    .mobile_menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 2rem;
+    }
+}
