@@ -1,0 +1,272 @@
+.course_detail {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+}
+.clr {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(#eeeea1, rgb(255, 255, 255));
+  position: relative;
+  z-index: 0;
+}
+.left_col {
+  max-width: 30rem;
+}
+.rating_course {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 200;
+}
+.ratinglength {
+  color: #407206;
+}
+.edu_name {
+  text-decoration: underline;
+  color: #407206;
+}
+.left_col_p {
+  margin: 0.5rem 0;
+  color: grey;
+  font-size: medium;
+}
+.left_col h2 {
+  color: #000;
+}
+.course_descrip {
+  padding-top: 2rem;
+  color: grey;
+}
+.course_des_heading {
+  font-size: larger;
+  font-weight: bold;
+}
+.chapter_breakdown {
+  padding-top: 1rem;
+}
+.chapter_breakdown_1 {
+  border: 1px solid gray;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}
+.chapter_breakdown_2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  user-select: none;
+  cursor: pointer;
+}
+.chapter_breakdown_3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.chapter_breakdown_title {
+  font-size: 1rem;
+  color: #407206;
+}
+
+.lecture_breakdown {
+  overflow: hidden;
+  transition: all;
+  transition-duration: 300ms;
+  max-height: 0;
+}
+.lecture_breakdown_ {
+  overflow: hidden;
+  transition: all;
+  transition-duration: 300ms;
+  max-height: fit-content;
+}
+.lecture_breakdown_ulist {
+  padding: 0 1rem;
+  border-top: 1px solid grey;
+  list-style-type: none;
+}
+.lecture_breakdown_llist {
+  display: flex;
+  align-items: start;
+  gap: 2px;
+}
+.lecture_breakdown_1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+.lecture_breakdown_2 {
+  display: flex;
+  gap: 5px;
+}
+.icon {
+  margin: 1rem;
+}
+.last_des {
+  padding-top: 2rem;
+  color: rgb(158, 148, 148);
+}
+.last_des_p {
+  text-align: left;
+  color: grey;
+}
+.preview {
+  text-decoration: underline;
+  color: #407206;
+}
+.right_col_1 {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.offer {
+  color: red;
+  font-weight: 300;
+}
+.offer_days {
+  font-size: medium;
+  font-weight: 500;
+}
+.img_right {
+  width: 30rem;
+}
+.right_col_2 {
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.udis_price {
+  color: rgb(158, 154, 154);
+  text-decoration: line-through;
+}
+.dis_price {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+.right_col_2 p {
+  margin: 0;
+}
+.right_col_3 {
+  display: flex;
+  padding-top: 0.2rem;
+  align-items: center;
+}
+._course {
+  display: flex;
+  gap: 0.3rem;
+  padding-left: 1rem;
+}
+.right_col {
+  border: 0.5px solid rgb(155, 151, 151);
+  background-color: white;
+  height: fit-content;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+.enroll_btn {
+  background-color: #407206;
+  padding: 1rem 2rem;
+  font-size: large;
+  width: 27rem;
+  border: none;
+  color: white;
+}
+.enroll {
+  padding: 1rem;
+}
+.right_des {
+  color: grey;
+  padding: 1rem;
+}
+.right_des p {
+  font-size: larger;
+  color: #000;
+}
+@media (max-width: 768px) {
+  .course_detail {
+    flex-direction: column-reverse;
+    padding: 2rem 10rem;
+    justify-content: center;
+    width: 58%;
+    gap: 3rem;
+  }
+  .right_col {
+    width: 30rem;
+  }
+}
+@media (max-width: 425px) {
+  .course_detail {
+    padding: 0 1.5rem;
+    width: 88%;
+    align-items: center;
+  }
+  .left_col {
+    padding: 2rem;
+  }
+  .left_col h1 {
+    font-size: 1.2rem;
+  }
+  .left_col h2 {
+    font-size: 0.9rem;
+  }
+  .left_col_p {
+    font-size: small;
+  }
+  .img_right {
+    width: 20rem;
+  }
+  .right_col {
+    width: 20rem;
+  }
+  .enroll_btn {
+    width: 18rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .lecture_breakdown_2 {
+    flex-direction: column;
+  }
+  .course_detail {
+    padding: 0 1rem;
+  }
+  .lecture_breakdown_2 p {
+    width: 5rem;
+  }
+  .lecture_breakdown_llist {
+    align-items: center;
+    justify-content: center;
+  }
+  .rating_course {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0;
+  }
+}
+@media (max-width: 320px) {
+  .rating_course {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .course_detail {
+    padding: 0 1rem;
+  }
+  .img_right {
+    width: 18rem;
+  }
+  .right_col {
+    width: 18rem;
+  }
+  .enroll_btn {
+    width: 15rem;
+  }
+}

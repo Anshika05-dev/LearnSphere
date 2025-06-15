@@ -14,7 +14,6 @@
     "humanize-duration": "^3.33.0",
     "lucide-react": "^0.514.0",
     "quill": "^2.0.3",
-    "rc-progress": "^4.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",

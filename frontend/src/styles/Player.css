@@ -1,0 +1,71 @@
+._player {
+  padding: 2rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-evenly;
+}
+.left_play {
+  color: rgb(132, 126, 126);
+}
+.thumbnail_img {
+  width: 40rem;
+}
+.about_lec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.about_p{
+    font-size: 1.5rem;
+    color: rgb(112, 108, 108);
+}
+.about_btn{
+    background-color: #44760a;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+._chk{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+._ratings{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+margin-top: 2rem;
+}
+@media (max-width: 1024px) {
+  ._player {
+    flex-direction: column;
+    align-items: center;
+  }
+  .thumbnail_img {
+    width: 40rem;
+  }
+}
+@media (max-width: 425px) {
+  .right_div,
+  .thumbnail_img{
+    width: 20rem;
+  }
+  .youtube-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .youtube-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

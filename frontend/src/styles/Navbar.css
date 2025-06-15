@@ -66,6 +66,7 @@
         display:none;
     }
     .mobile_menu{
+        z-index: 10;
         gap: 1rem;
         padding: 0.2rem 2rem;
         background-color: #96ca5b;

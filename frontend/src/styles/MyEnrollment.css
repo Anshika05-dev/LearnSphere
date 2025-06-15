@@ -1,0 +1,67 @@
+
+.main_table {
+  table-layout: fixed;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+.main_table th,
+.main_table td {
+  border-bottom: 1px solid gray;
+  padding: 1rem;
+  text-align: center;
+}
+
+.main_table_head {
+  color: rgb(104, 98, 98);
+}
+
+.table_heading {
+  padding: 1rem 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.my_enrollment {
+  padding: 4rem;
+}
+
+.table_wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.td_img {
+  width: 7rem;
+}
+.table_data{
+  display: flex;
+  padding: auto;
+  gap: 1rem;
+  align-items: center;
+}
+.table_row{
+  font-size: small;
+  color: rgb(131, 128, 128);
+}
+.btn_cmplt{
+  border: none;
+  background-color: #44760a;
+  color: aliceblue;
+  padding:  5px 7px;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+@media (max-width: 425px) {
+  .main_table {
+    table-layout: auto;
+  }
+  .my_enrollment {
+    padding: 1rem;
+  }
+
+}

@@ -1,0 +1,17 @@
+/* Rating.css */
+.rating-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .star {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #a0aec0; /* Tailwind's gray-400 */
+    transition: color 0.3s ease;
+  }
+  
+  .star.active {
+    color: #facc15; /* Tailwind's yellow-500 */
+  }
+  
