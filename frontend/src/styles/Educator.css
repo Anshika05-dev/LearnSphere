@@ -1,0 +1,11 @@
+.educator{
+    min-height: 100vh;
+    background-color: white;
+}
+.educator_1{
+    display: flex;
+}
+.educator_2{
+    flex-grow: 1;
+    width: 80%;
+}

@@ -1,8 +1,11 @@
 import React from 'react'
+import '../../styles/Footer.css'
 
 const Footer = () => {
   return (
-    <div><h1>Contri_Footer</h1></div>
+    <footer >
+      <p className='_footer'>Copyright 2025 © LearnSphere. All Right Reserved</p>
+    </footer>
   )
 }
 

@@ -1,0 +1,223 @@
+._add_course_div1 {
+    height: 100vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+  }
+  
+  ._add_course_form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    color: rgb(86, 86, 86);
+  }
+  
+  ._add_course_div2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  ._add_course_div3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  ._add_course_div4 {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .form_input_1 {
+    outline: none;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 1rem;
+  }
+  
+  .lable_1 {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .upload {
+    color: white;
+    background-color: #407902;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+  }
+  
+  .chapters-container {
+    padding: 1rem;
+  }
+  
+  .chapter-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .chapter-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .chapter-title {
+    font-weight: 600;
+  }
+  
+  .dropdown-icon {
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .dropdown-icon.collapsed {
+    transform: rotate(-90deg);
+  }
+  
+  .lecture-count {
+    color: #888;
+  }
+  
+  .delete-icon {
+    cursor: pointer;
+    width: 1rem;
+  }
+  
+  .lecture-list {
+    padding: 1rem;
+  }
+  
+  .lecture-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .lecture-link {
+    color: #3498db;
+    text-decoration: underline;
+  }
+  
+  .add-lecture-btn {
+    display: inline-block;
+    background-color: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .add-chapter-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dff3c9;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: white;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 20rem;
+    position: relative;
+  }
+  
+  .popup-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-field {
+    margin-top: 0.25rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .checkbox {
+    transform: scale(1.2);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #d9ffb1;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1rem;
+    cursor: pointer;
+  }
+  
+  .submit-form-btn {
+    background: black;
+    color: white;
+    padding: 0.625rem 2rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 425px) {
+    ._add_course_div1 {
+      padding: 2rem 1rem;
+    }
+  
+    ._add_course_div3 {
+      gap: 1rem;
+    }
+  }
+  

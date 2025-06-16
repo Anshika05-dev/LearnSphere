@@ -59,8 +59,21 @@
 .mob_menu{
     display: none;
 }
+.contributor_nav{
+    display: flex;
 
-
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+    color: rgb(110, 109, 109);
+}
+.parent_contributor_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0.5rem 2rem;
+}
 @media(max-width:768px){
     .buttons{
         display:none;
@@ -78,5 +91,10 @@
     .mob_menu{
         display: flex;
         padding: 2rem;
+    }
+}
+@media(max-width:425px){
+    .contributor_nav p{
+        display: none;
     }
 }
