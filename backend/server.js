@@ -1,24 +1,20 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const connectDB = require('./src/config/db');
-const auth = require('./src/routes/auth');
-const courses = require('./src/routes/course')
-
-dotenv.config();
-connectDB();
+import express from 'express'
+import cors from 'cors'
+import 'dotenv/config'
+import connectDB from './src/config/db.js';
+import { clerkWebhooks } from './src/controllers/webhooks.js';
 
 const app = express();
+await connectDB();
+
 app.use(cors());
-app.use(express.json());
+
 
 app.get('/', (req, res) => {
   res.send('SaaS LMS API is running...');
 });
+app.post('/clerk',express.json(),clerkWebhooks)
 
-// Routes will be mounted here
-app.use('/api',auth );
-app.use('/api/courses', courses);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

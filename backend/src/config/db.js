@@ -1,13 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error('MongoDB connection failed', error);
-    process.exit(1);
-  }
+  mongoose.connection.on('connected',()=>console.log('Database Connected'))
+  await mongoose.connect(`${process.env.MONGO_URI}/LearnSphere`)
 };
 
-module.exports = connectDB;
+export default connectDB
