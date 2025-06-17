@@ -7,9 +7,11 @@ import { clerkWebhooks } from './src/controller/webhooks.js'
 const app=express()
 await connectDB()
 app.use(cors())
+app.use(express.json());
+
 
 app.get('/',(req,res)=>res.send("LMS api working.."))
-app.post('/clerk', express.json(),clerkWebhooks)
+app.post('/clerk', clerkWebhooks);
 
 const PORT=process.env.PORT||5002
 
