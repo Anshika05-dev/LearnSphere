@@ -1,6 +1,5 @@
 import express from "express";
 import { getAllCourses, getCourseId } from "../controller/courseController.js";
-import { protectEducator } from "../middleware/authMiddleware.js";
 const courseRouter=express.Router()
 
 courseRouter.get('/all',getAllCourses)
