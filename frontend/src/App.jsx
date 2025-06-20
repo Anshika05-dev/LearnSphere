@@ -9,6 +9,7 @@ import Loading from "./components/students/Loading";
 import Educator from "./pages/contributor/Educator";
 import Dashboard from "./pages/contributor/Dashboard";
 import AddCourse from "./pages/contributor/AddCourse";
+import AddCourseAI from "./pages/contributor/AddCourseAi";
 import MyCourses from "./pages/contributor/MyCourses";
 import StudentsEnrolled from "./pages/contributor/StudentsEnrolled";
 import Navbar from "./components/students/Navbar";
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="add-course"element={<AddCourse/>}/>
         <Route path="my-courses"element={<MyCourses/>}/>
         <Route path="student-enrolled"element={<StudentsEnrolled/>}/>
+        <Route path="add-course-ai"element={<AddCourseAI/>}/>
         </Route>
       </Routes>
     </div>

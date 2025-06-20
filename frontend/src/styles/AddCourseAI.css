@@ -1,0 +1,78 @@
+._addcourseai{
+    display: flex;
+    padding: 4rem;
+    justify-content: space-between;
+}
+._addcourseai_btn{
+    background-color:  #56a403;
+    color: white;
+    border: none;
+    width: 10rem;
+    font-size: large;
+    border-radius: 3rem;
+    height: 4rem;
+    margin-right: 7rem;
+}
+._addcourseai_h1{
+    color: rgb(78, 78, 78);
+    font-size: 2rem;
+}
+._addcourseai1{
+    padding:0 4rem ;
+}
+._addcourseai1 input,
+._addcourseai1 textarea ,
+._addcourseai_select {
+    width: 90%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+._addcourseai1 input:focus,
+._addcourseai1 textarea:focus,
+._addcourseai_select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+._addcourseai_btn2{
+    background-color:  #56a403;
+    color: white;
+    border: none;
+    font-size: large;
+    border-radius: 3rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+._addcourseai_result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    white-space: pre-wrap; /* to preserve line breaks */
+    font-family: 'Courier New', monospace;
+    color: #333;
+  }
+  
+@media(max-width:1024px){
+    ._addcourseai{
+        padding: 2rem;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    ._addcourseai_btn {
+        margin-right: 0;
+    }
+    ._addcourseai_btn2{
+        margin-bottom: 1rem;
+    }
+}
+@media(max-width:425px){
+    ._addcourseai1{
+        padding: 0 1rem;
+    }
+}

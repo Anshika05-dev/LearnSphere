@@ -23,7 +23,7 @@ const AddCourse = () => {
     isPreviewFree: false,
   });
 
-  // Optional: collapsed state per chapter
+
   const [collapsedChapters, setCollapsedChapters] = useState({});
   const handleChapter = (action, chapterId) => {
     if (action === "add") {
@@ -32,17 +32,12 @@ const AddCourse = () => {
       if (title) {
         const newChapter = {
           chapterId: uniqid(),
-
           chapterTitle: title,
-
           chapterContent: [],
-
           collapsed: false,
-
           chapterorder:
             chapters.length > 0 ? chapters.slice(-1)[0].chapterOrder + 1 : 1,
         };
-
         setChapters([...chapters, newChapter]);
       }
     } else if (action === "remove") {
