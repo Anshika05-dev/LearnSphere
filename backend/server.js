@@ -8,7 +8,6 @@ import { clerkMiddleware } from '@clerk/express';
 import connectCloudinary from './src/config/cloudinary.js';
 import courseRouter from './src/routes/courseRoute.js';
 import userRouter from './src/routes/userRoutes.js';
-import bodyParser from 'body-parser';
 
 
 const app = express();
@@ -19,9 +18,7 @@ await connectCloudinary();
 
 app.use(cors());
 
-
-
-app.post('/api/webhooks/stripe', bodyParser.raw({ type: 'application/json' }), stripeWebhooks);
+app.post('/stripe', express.raw({ type: 'application/json' }), stripeWebhooks);
 
 app.use(clerkMiddleware())
 app.use(express.json());
