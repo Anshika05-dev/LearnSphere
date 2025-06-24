@@ -2,18 +2,29 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../styles/MyCourses.css";
 import { AuthContext } from "../../context/AuthContex";
 import Loading from "../../components/students/Loading";
+import axios from "axios";
 
 const MyCourses = () => {
-  const { currency, allCourses } = useContext(AuthContext);
+  const { currency, backendUrl, isEducator, getToken } = useContext(AuthContext);
   const [courses, setCourses] = useState(null);
 
   const fetchEducatorCourses = async () => {
-    setCourses(allCourses);
+    try {
+      const token=await getToken()
+      const{data}=await axios.get(backendUrl+'/api/educator/courses',{
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      data.success && setCourses(data.courses)
+    } catch (error) {
+      toast.error(error.message)
+    }
   };
 
   useEffect(() => {
+    if(isEducator){
     fetchEducatorCourses();
-  }, [allCourses]);
+    }
+  }, [isEducator]);
 
   return courses ? (
     <div className="_edu_courses_outer">

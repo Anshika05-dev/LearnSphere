@@ -4,17 +4,32 @@ import { dummyDashboardData } from "../../assets/assets";
 import Loading from "../../components/students/Loading";
 import { FileUser, SquareLibrary, Users } from "lucide-react";
 import "../../styles/Dashboard.css";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
-  const { currency } = useContext(AuthContext);
+  const { currency, backendUrl, getToken, isEducator } = useContext(AuthContext);
 
   const fetchDashboardData = async () => {
-    setDashboardData(dummyDashboardData);
+   try {
+    const token=await getToken()
+      const{data}=await axios.get(backendUrl+'/api/educator/dashboard',{
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      if(data.success){
+        setDashboardData(data.dashboardData)
+      }else{
+        toast.error(data.message)
+      }
+   } catch (error) {
+    toast.error(error.message)
+   }
   };
   useEffect(() => {
-    fetchDashboardData();
-  }, []);
+    if(isEducator){
+    fetchDashboardData();}
+  }, [isEducator]);
 
   return dashboardData ? (
     <div className="_dashboard">

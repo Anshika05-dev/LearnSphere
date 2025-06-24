@@ -13,6 +13,8 @@ import {
 import Loading from "../../components/students/Loading";
 import humanizeDuration from "humanize-duration";
 import YouTube from "react-youtube";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -28,16 +30,52 @@ const CourseDetails = () => {
     calculateCourseDuration,
     calculateNoOfLectures,
     currency,
+    backendUrl,
+    userData,
+    getToken
   } = useContext(AuthContext);
 
   const fetchCourseData = async () => {
-    const findCourse = allCourses.find((course) => course._id === id);
-    setCourseData(findCourse);
+    try {
+      const {data}=await axios.get(backendUrl+'/api/course/'+id)
+      if(data.success){
+        setCourseData(data.courseData)
+      }else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   };
+  const enrollCourse=async()=>{
+    try {
+      if(!userData){
+        return toast.warn('Login To Enroll')
+      }
+      if(isAlreadyEnrolled){
+        return toast.warn('Already Enrolled')
+      }
+      const token=await getToken()
+      const {data}=await axios.post(backendUrl+'/api/user/purchase',{courseId:courseData._id},{headers:{Authorization:`Bearer ${token}`}})
+      if(data.success){
+        const {session_url}=data
+        window.location.replace(session_url)
+      }else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
 
   useEffect(() => {
     fetchCourseData();
-  }, [allCourses]);
+  }, []);
+  useEffect(() => {
+    if(userData && courseData){
+      setIsAlreadyEnrolled(userData.enrolledCourses.includes(courseData._id))
+    }
+  }, [userData,courseData]);
   const toggleSection = (index) => {
     setOpenSection((prev) => ({ ...prev, [index]: !prev[index] }));
   };
@@ -83,7 +121,7 @@ const CourseDetails = () => {
           </div>
 
           <p>
-            Course by:<span className="edu_name"> Anshika Gupta</span>
+            Course by: <span className="edu_name">{courseData.educator.name}</span>
           </p>
 
           <div className="course_descrip">
@@ -128,7 +166,11 @@ const CourseDetails = () => {
                               {lecture.isPreviewFree && (
                                 <p
                                   onClick={() =>
-                                    setPlayerData({videoId: lecture.lectureUrl.split('/').pop()})
+                                    setPlayerData({
+                                      videoId: lecture.lectureUrl
+                                        .split("/")
+                                        .pop(),
+                                    })
                                   }
                                   className="preview"
                                 >
@@ -165,7 +207,14 @@ const CourseDetails = () => {
         </div>
 
         <div className="right_col">
-          {playerData?<YouTube videoId={playerData.videoId} optns={{playerVars:{autoplay:1}}}/>:<img src={courseData.courseThumbnail} className="img_right" />}
+          {playerData ? (
+            <YouTube
+              videoId={playerData.videoId}
+              optns={{ playerVars: { autoplay: 1 } }}
+            />
+          ) : (
+            <img src={courseData.courseThumbnail} className="img_right" />
+          )}
           <div className="right_col_1">
             <ClockAlert />
             <p className="offer">
@@ -197,7 +246,7 @@ const CourseDetails = () => {
             </div>
           </div>
           <div className="enroll">
-            <button className="enroll_btn">
+            <button onClick={enrollCourse} className="enroll_btn">
               {" "}
               {isAlreadyEnrolled ? "Already Enrolled" : "Enroll Now!"}
             </button>

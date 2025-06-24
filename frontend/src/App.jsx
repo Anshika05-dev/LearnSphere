@@ -14,6 +14,8 @@ import MyCourses from "./pages/contributor/MyCourses";
 import StudentsEnrolled from "./pages/contributor/StudentsEnrolled";
 import Navbar from "./components/students/Navbar";
 import "quill/dist/quill.snow.css";
+import { ToastContainer} from 'react-toastify';
+
 
 const App = () => {
 
@@ -21,6 +23,7 @@ const App = () => {
 
   return (
     <div>
+      <ToastContainer/>
       {!iseducatorroute && <Navbar />}
       
       <Routes>

@@ -2,6 +2,7 @@ import { clerkClient } from '@clerk/express'
 import Course from '../models/course.js'
 import { v2 as cloudinary } from 'cloudinary'
 import { Purchase } from '../models/Purchase.js'
+import User from '../models/User.js'
 
 //updaterole to educator
 export const updateRoleToEducator = async (req, res) => {
@@ -76,7 +77,7 @@ export const educatorDashboardData = async (req, res) => {
             students.forEach(student => {
                 enrolledStudentsData.push({
                     courseTitle: course.courseTitle,
-                    student
+                    student 
                 })
             });
         }

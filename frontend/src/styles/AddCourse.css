@@ -48,6 +48,14 @@
     gap: 1.5rem;
   }
   
+  .lable_1 img {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+  }
+
   .upload {
     color: white;
     background-color: #407902;

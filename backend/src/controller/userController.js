@@ -2,8 +2,8 @@ import Stripe from "stripe";
 import Course from "../models/course.js"
 import { Purchase } from "../models/Purchase.js"
 import User from "../models/User.js"
-import Razorpay from "razorpay";
 import { CourseProgress } from "../models/CoursEProgress.js";
+import Razorpay from "razorpay";  
 
 
 export const getUserData = async (req, res) => {
@@ -113,7 +113,7 @@ export const addUserRating=async(req,res)=>{
     const userId=req.auth().userId;
     const {courseId, rating}=req.body;
     if(!courseId||!userId||!rating||rating<1||rating>5){
-        return res.json({success:false, message:'invalid Details'})
+        return res.json({success:false, message:'Invalid Details'})
     }
     try {
         const course=await Course.findById(courseId)
@@ -131,7 +131,7 @@ export const addUserRating=async(req,res)=>{
             course.courseRatings.push({userId,rating})
         }
         await course.save();
-        return res.json({succes:true, message:'Rating Added'})
+        return res.json({success:true, message:'Rating Added'})
     } catch (error) {
     res.json({ success: false, message: error.message })
     }

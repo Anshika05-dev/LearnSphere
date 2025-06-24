@@ -22,7 +22,6 @@ const CourseList = () => {
         : setFilteredCourse(tempCourses);
     }
   }, [allCourses, keyword]);
-
   return (
     <>
     <div className="outer_course">
