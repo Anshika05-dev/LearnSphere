@@ -11,6 +11,7 @@ import Dashboard from "./pages/contributor/Dashboard";
 import AddCourse from "./pages/contributor/AddCourse";
 import AddCourseAI from "./pages/contributor/AddCourseAi";
 import MyCourses from "./pages/contributor/MyCourses";
+import AiGeneratedCourse from "./pages/contributor/AiGeneratedCourse"; 
 import StudentsEnrolled from "./pages/contributor/StudentsEnrolled";
 import Navbar from "./components/students/Navbar";
 import "quill/dist/quill.snow.css";
@@ -42,6 +43,8 @@ const App = () => {
         <Route path="my-courses"element={<MyCourses/>}/>
         <Route path="student-enrolled"element={<StudentsEnrolled/>}/>
         <Route path="add-course-ai"element={<AddCourseAI/>}/>
+        <Route path="generated-course" element={<AiGeneratedCourse />} />
+        
         </Route>
       </Routes>
     </div>

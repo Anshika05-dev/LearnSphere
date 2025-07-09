@@ -8,6 +8,7 @@ import { clerkMiddleware } from '@clerk/express';
 import connectCloudinary from './src/config/cloudinary.js';
 import courseRouter from './src/routes/courseRoute.js';
 import userRouter from './src/routes/userRoutes.js';
+import aiRoutes from "./src/routes/aiRoutes.js"
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.post('/clerk',clerkWebhooks);
 app.use('/api/educator',educatorRouter)
 app.use('/api/course',courseRouter)
 app.use('/api/user',userRouter)
+app.use("/api/gemini", aiRoutes);
 
 const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => {
