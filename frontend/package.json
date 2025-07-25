@@ -17,6 +17,7 @@
     "humanize-duration": "^3.33.0",
     "lucide-react": "^0.514.0",
     "mime": "^4.0.7",
+    "nanoid": "^5.1.5",
     "quill": "^2.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

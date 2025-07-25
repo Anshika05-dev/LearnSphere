@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "../../styles/AddCourse.css";
-import uniqid from "uniqid";
+import {nanoid} from "nanoid";
 import Quill from "quill";
 import { MoveDown, UploadCloud, X } from "lucide-react";
 import { AuthContext } from "../../context/AuthContex";
@@ -34,7 +34,7 @@ const AddCourse = () => {
 
       if (title) {
         const newChapter = {
-          chapterId: uniqid(),
+          chapterId: nanoid(),
           chapterTitle: title,
           chapterContent: [],
           collapsed: false,
@@ -84,7 +84,7 @@ const AddCourse = () => {
     ...lectureDetails,
     lectureOrder: chapter.chapterContent.length > 0 ? chapter.
     chapterContent.slice(-1)[0].lectureOrder + 1 : 1,
-    lectureId: uniqid()
+    lectureId: nanoid()
     };
     chapter.chapterContent.push(newLecture);
   }

@@ -11,7 +11,7 @@ const CourseCard = ({course}) => {
       <img src={course.courseThumbnail} alt=''/>
       <div className='course_content'>
         <h4>{course.courseTitle}</h4>
-        <p className='price'>Anshika</p>
+        <p className='price'>{course.educator.name}</p>
         <div className='rating'>
           <p>{calculateRating(course)}</p>
           <div>{[...Array(5)].map((_,i)=>(
