@@ -70,6 +70,9 @@ const AddCourseAi = () => {
           <button onClick={handleSubmit} className="_addcourseai_btn2">
             Generate Your Course
           </button>
+          <button onClick={handleadd} className="_addcourseai_btn2">
+            Add as the Course
+          </button>
         </form>
       </div>
     </>
