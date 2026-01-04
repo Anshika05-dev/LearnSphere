@@ -12,7 +12,7 @@ const Sidebar = () => {
     { name: 'Add Course', path: '/educator/add-course', icon: <BookMarked /> },
     { name: 'My Courses', path: '/educator/my-courses', icon: <BookOpenCheck /> },
     { name: 'Student Enrolled', path: '/educator/student-enrolled', icon: <UserCheck/> },
-    // { name: 'Add Course With AI', path: '/educator/add-course-ai', icon: <BrainCircuit /> },
+    { name: 'Add Course With AI', path: '/educator/add-course-ai', icon: <BrainCircuit /> },
     ];
   return isEducator && (
     <div className='_sidebar'>{
