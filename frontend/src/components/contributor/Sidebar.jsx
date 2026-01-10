@@ -8,10 +8,10 @@ const Sidebar = () => {
   const {isEducator} =useContext (AuthContext)
   const menuItems = [
 
-    { name: 'Dashboard', path: '/educator', icon: <Home />},
-    { name: 'Add Course', path: '/educator/add-course', icon: <BookMarked /> },
-    { name: 'My Courses', path: '/educator/my-courses', icon: <BookOpenCheck /> },
-    { name: 'Student Enrolled', path: '/educator/student-enrolled', icon: <UserCheck/> },
+    // { name: 'Dashboard', path: '/educator', icon: <Home />},
+    // { name: 'Add Course', path: '/educator/add-course', icon: <BookMarked /> },
+    // { name: 'My Courses', path: '/educator/my-courses', icon: <BookOpenCheck /> },
+    // { name: 'Student Enrolled', path: '/educator/student-enrolled', icon: <UserCheck/> },
     // { name: 'Add Course With AI', path: '/educator/add-course-ai', icon: <BrainCircuit /> },
     ];
   return isEducator && (
